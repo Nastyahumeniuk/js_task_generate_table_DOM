@@ -354,22 +354,22 @@ const people = [
   },
 ];
 
-// eslint-disable-next-line no-console
-function generateTable () {
-const table = document.querySelector('.dashboard');
 
-people.forEach((person) => {
-  const age = person.died - person.born;
-  const century = Math.ceil(person.died / 100);
-  const row = document.createElement('tr');
+function generateTable() {
+  const table = document.querySelector('.dashboard');
 
-  if(person.sex === 'm') {
-    person.sex = 'Male';
-  } else {
-    person.sex = 'Female';
-  }
+  people.forEach((person) => {
+    const age = person.died - person.born;
+    const century = Math.ceil(person.died / 100);
+    const row = document.createElement('tr');
 
-  row.innerHTML = `
+    if (person.sex === 'm') {
+      person.sex = 'Male';
+    } else {
+      person.sex = 'Female';
+    }
+
+    row.innerHTML = `
     <td>${person.name}</td>
     <td>${person.sex}</td>
     <td>${person.born}</td>
@@ -377,8 +377,8 @@ people.forEach((person) => {
     <td>${age}</td>
     <td>${century}</td>
   `;
-  table.appendChild(row);
-});
+    table.appendChild(row);
+  });
 }
 
 generateTable();
