@@ -354,7 +354,6 @@ const people = [
   },
 ];
 
-
 function generateTable() {
   const table = document.querySelector('.dashboard');
 
